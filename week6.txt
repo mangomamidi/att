@@ -1,0 +1,41 @@
+package PB2_BATCH2_5H8;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class WEEK_6 {
+	public static void main(String[] args) throws InterruptedException{
+		System.setProperty("Webdriver.chrome.driver","C:\\Users\\CMRCP\\Downloads\\chromedriver-win64 \\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.google.com/");
+		driver.manage().window().maximize();
+		driver.get("https://www.ajio.com/");
+		Thread.sleep(2000);
+		WebElement LoginButton=driver.findElement(By.id("loginAjio"));
+		LoginButton.click();
+		WebElement MobileNumber=driver.findElement(By.xpath("//*[@id=\"login-modal\"]/div/div/div[2]/div/form/div[2]/div[1]/label/input"));
+		MobileNumber.sendKeys("3494962032");
+		WebElement ContinueButton=driver.findElement(By.xpath("//*[@id=\"login-modal\"]/div/div/div[2]/div/form/div[2]/div[2]/input"));
+		ContinueButton.click();
+		Thread.sleep(4000);
+		WebElement Name=driver.findElement(By.xpath("//*[@id=\"login-modal\"]/div/div/div[2]/div[2]/form/div[5]/input"));
+		Name.sendKeys("dsafkljf");
+	    WebElement Email=driver.findElement(By.xpath("//*[@id=\"login-modal\"]/div/div/div[2]/div[2]/form/div[7]/input"));
+	    Email.sendKeys("asdfhasd4369@gmail.com"); 
+	    Thread.sleep(3000); 
+		WebElement Gender=driver.findElement(By.xpath("//*[@id=\"login-modal\"]/div/div/div[2]/div[2]/form/div[3]/label[2]/span"));
+		Gender.click();
+		Thread.sleep(4000);
+		WebElement CheckBox=driver.findElement(By.xpath("//*[@id=\"tncCheckbox\"]"));
+		CheckBox.click();
+		Thread.sleep(4000);
+		WebElement SendOtpButton=driver.findElement(By.xpath("//*[@id=\"login-modal\"]/div/div/div[2]/div[2]/form/div[12]/input"));
+		SendOtpButton.click();
+		Thread.sleep(10000);
+		WebElement otp=driver.findElement(By.xpath("//*[@id=\"login-modal\"]/div/div/div[2]/div[2]/form/div/div[2]/div[1]/input"));
+		otp.sendKeys("7699");
+		Thread.sleep(1000);
+		WebElement SignUpButton=driver.findElement(By.xpath("//*[@id=\"login-modal\"]/div/div/div[2]/div[2]/form/div/div[3]/input"));
+		SignUpButton.click();
+	}
+}
